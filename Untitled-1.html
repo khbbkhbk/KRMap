@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  img{
+    position: absolute;
+    cursor: pointer;
+  }
+  img:hover{
+    transform: scale(1.5);
+    transition: 0.1s;
+  }
+  /* 悬浮窗口样式 */
+  .tooltip {
+      display: none; /* 默认隐藏 */
+      font-size: 50px;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+      z-index: 1;
+      white-space: nowrap;
+      font-weight: bold;
+      font-family: Calibri;
+  }
+  div[class*="KRAsub"]{
+    color:#26BD9B
+  }
+  div[class*="KRAmain"]{
+    color:#2E849F
+  }
+  .En{
+    font-style: italic;
+  }
+
+
+</style>
+<body>
+  <div style="width: 6281px; height:6243px; background-image:url('screen_map_bg.png'); position: relative">
+    <img src="kr3_map_flag_0180.png" alt="迷雾废墟" style="top:59.7%; left:30.2%;" data-tooltip="tooltip1" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="深叶哨所" style="top:56.5%; left:35%;" data-tooltip="tooltip2" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="三殇之殿" style="top:54.3%; left:41%;" data-tooltip="tooltip3" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="树海" style="top:75.3%; left:34%;" data-tooltip="tooltip4" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="护卫之门" style="top:78.5%; left:46%;" data-tooltip="tooltip5" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="森林之心" style="top:72.3%; left:43%;" data-tooltip="tooltip6" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Emerald Treetops" style="top:62.3%; left:40%;" data-tooltip="tooltip7" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Ravaged Outskirts" style="top:69.3%; left:53.5%;" data-tooltip="tooltip8" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="The Wildbeast Den" style="top:54.3%; left:41%;" data-tooltip="tooltip9" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Bleak Valley" style="top:54.3%; left:41%;" data-tooltip="tooltip10" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Carmine Mines" style="top:54.3%; left:41%;" data-tooltip="tooltip11" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Wicked Crossing" style="top:54.3%; left:41%;" data-tooltip="tooltip12" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="Temple Courtyard" style="top:54.3%; left:41%;" data-tooltip="tooltip13" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+    <img src="kr3_map_flag_0180.png" alt="The Lost Temple" style="top:54.3%; left:41%;" data-tooltip="tooltip14" onmouseover="showTooltip(event)" onmouseout="hideTooltip(event)">
+  </div>
+
+  <!-- 悬浮窗口 -->
+  <div id="tooltip1" class="tooltip KRAsub1-1">迷雾废墟</div>
+  <div id="tooltip2" class="tooltip KRAsub1-2">深叶哨所</div>
+  <div id="tooltip3" class="tooltip KRAsub1-3">三殇之殿</div>
+  <div id="tooltip4" class="tooltip KRAmain-1">树海 <span class="En">Sea Of Trees</span></div>
+  <div id="tooltip5" class="tooltip KRAmain-2">护卫之门 <span class="En">The Guardian Gate</span></div>
+  <div id="tooltip6" class="tooltip KRAmain-3">森林之心 <span class="En">The Heart Of The Forest</span></div>
+  <div id="tooltip7" class="tooltip KRAmain-4"><span class="En">Emerald Treetops</span></div>
+  <div id="tooltip8" class="tooltip KRAmain-5"><span class="En">Ravaged Outskirts</span></div>
+  <div id="tooltip9" class="tooltip KRAmain-6"><span class="En">The Wildbeast Den</span></div>
+  <div id="tooltip10" class="tooltip KRAmain-7"><span class="En">Bleak Valley</span></div>
+  <div id="tooltip11" class="tooltip KRAmain-8"><span class="En">Carmine Mines</span></div>
+  <div id="tooltip12" class="tooltip KRAmain-9"><span class="En">Wicked Crossing</span></div>
+  <div id="tooltip13" class="tooltip KRAmain-10"><span class="En">Temple Courtyard</span></div>
+  <div id="tooltip14" class="tooltip KRAmain-11"><span class="En">The Lost Temple</span></div>
+  <div id="tooltip15" class="tooltip KRAmain-12"><span class="En">The Lost Temple</span></div>
+  <div id="tooltip16" class="tooltip KRAmain-13"><span class="En">The Lost Temple</span></div>
+  <div id="tooltip17" class="tooltip KRAmain-14"><span class="En">The Lost Temple</span></div>
+
+  <script>
+    // 显示悬浮窗口的函数
+    function showTooltip(event) {
+      var tooltipId = event.target.getAttribute('data-tooltip');
+      var tooltip = document.getElementById(tooltipId);
+      tooltip.style.display = "block";
+      tooltip.style.left = event.pageX + 10 + 'px'; // 设置悬浮窗口的左侧位置
+      tooltip.style.top = event.pageY + 10 + 'px'; // 设置悬浮窗口的顶部位置
+    }
+
+    // 隐藏悬浮窗口的函数
+    function hideTooltip(event) {
+      var tooltipId = event.target.getAttribute('data-tooltip');
+      var tooltip = document.getElementById(tooltipId);
+      tooltip.style.display = "none";
+    }
+  </script>
+
+
+</body>
+</html>
